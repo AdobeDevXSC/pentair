@@ -1,6 +1,5 @@
 /* header and nav layout */
 header .nav-wrapper {
-	background-color: var(--background-color);
 	width: 100%;
 	z-index: 2;
 	position: fixed;
@@ -39,7 +38,10 @@ header .nav-wrapper {
   @media (width >= 900px) {
 	header nav#nav {
 	  display: flex;
-	  justify-content: space-between;
+	  flex-direction: column;
+	  align-items: center;
+	  max-width: unset;
+	  padding: 0;
 	}
   
 	header nav#nav[aria-expanded="true"] {
@@ -142,32 +144,82 @@ header .nav-wrapper {
   /* brand */
   header .nav-brand {
 	grid-area: brand;
-	/* flex-basis: 128px; */
-	font-size: var(--heading-font-size-s);
-	font-weight: 700;
+	background-color: var(--light-grey);
 	line-height: 1;
+	padding: 6px 0;
+  }
+
+  header .nav-brand > div {
 	display: flex;
-	border: solid 2px purple;
+	justify-content: flex-end;
+	align-items: center;
   }
 
   header nav#nav .nav-brand ul {
 	display: flex;
+	align-items: center;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	height: 32px;
+	font-family: var(--heading-font-family);
+	color: var(--dark-blue);
   }
 
-  header nav#nav .nav-brand ul:last-of-type li::before {
-	border: solid 2px lime;
+  header nav#nav .nav-brand ul li {
+	margin-right: 40px;
+  }
 
+  header nav#nav .nav-brand ul li a {
+	display: flex;
+	font-size: 16px;
+	line-height: 18px;
+  }
+
+  header nav#nav .nav-brand ul li .icon {
+	display: inline-block;
+	margin-right: 4px;
+	width: 18px;
+	height: 18px;
+  }
+
+  header nav#nav .nav-brand img {
+	width: auto;
+	height: 18px;
+  }
+
+  header nav#nav .nav-brand ul:last-of-type {
+	border-left: solid 2px var(--nav-divider-color);
+  }
+
+  header nav#nav .nav-brand ul:last-of-type li {
+	margin: 0 0 0 30px;
+	align-items: center;
+  }
+
+  header nav#nav .nav-brand ul:last-of-type li a {
+	font-size: 23px;
+	line-height: 23px;
+	font-weight: 500;
+	color: var(--accent-green);
+  }
+
+  header nav#nav .nav-brand ul:last-of-type li .icon {
+	width: 28px;
+	height: 28px;
+	display: inline-block;
+  }
+
+  header nav#nav .nav-brand ul:last-of-type li .icon img {
+	width: 28px;
+	height: 28px;
+	filter: invert(38%) sepia(33%) saturate(1373%) hue-rotate(45deg) brightness(105%) contrast(93%);
   }
   
-  header nav#nav .nav-brand img {
-	width: 18px;
-	height: auto;
+  @media (width >= 900px) {
+	header .nav-brand {
+		width: 100%;
+	}
   }
-
-
 
   /* sections */
   header nav#nav .nav-sections {
@@ -175,11 +227,12 @@ header .nav-wrapper {
 	flex: 1 1 auto;
 	display: none;
 	visibility: hidden;
+	background-color: var(--white);
   }
 
   header nav#nav .nav-sections picture > img {
-	width: 128px;
-	height: auto;
+	width: 200px;
+	height: 55px;
   }
   
   header nav#nav[aria-expanded="true"] .nav-sections {
@@ -198,6 +251,29 @@ header .nav-wrapper {
   header nav#nav .nav-sections ul > li {
 	font-weight: 700;
   }
+
+  header nav#nav .nav-sections ul > li:last-of-type {
+	border: 1px solid #818181;
+	color: #818181;
+	width: 200px;
+	height: 48px;
+	line-height: 48px;
+	position: relative;
+	font-size: 16px;
+	font-weight: 300 !important;
+	padding: 0 10px;
+	font-family: var(--heading-font-family);
+  }
+
+  header nav#nav .nav-sections ul > li:last-of-type .icon img {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 22px;
+	height: 22px;
+	display: block;
+  }
   
   header nav#nav .nav-sections ul > li > ul {
 	margin-top: 0;
@@ -212,6 +288,14 @@ header .nav-wrapper {
 	  display: block;
 	  visibility: visible;
 	  white-space: nowrap;
+	  width: 100%;
+	}
+
+	header nav#nav .nav-sections > div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 80px;
 	}
   
 	header nav#nav a:any-link {
@@ -251,15 +335,24 @@ header .nav-wrapper {
   
 	header nav#nav .nav-sections ul {
 	  display: flex;
+	  align-items: center;
 	  gap: 2em;
 	  margin: 0;
 	  font-size: var(--body-font-size-xs);
 	}
   
-	header nav#nav .nav-sections .default-content-wrapper > ul > li {
+	header nav#nav .nav-sections .default-content-wrapper > ul > li:not(:last-of-type) {
 	  flex: 0 1 auto;
 	  position: relative;
 	  font-weight: 500;
+	  color: var(--dark-blue);
+	  font-size: 20px;
+	  border-bottom: 4px solid transparent;
+	}
+
+	header nav#nav .nav-sections .default-content-wrapper > ul > li:not(:last-of-type):hover {
+		border-bottom: 4px solid #4f8309;
+		cursor: pointer;
 	}
   
 	header nav#nav .nav-sections .default-content-wrapper > ul > li > ul {
