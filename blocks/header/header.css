@@ -142,23 +142,44 @@ header .nav-wrapper {
   /* brand */
   header .nav-brand {
 	grid-area: brand;
-	flex-basis: 128px;
+	/* flex-basis: 128px; */
 	font-size: var(--heading-font-size-s);
 	font-weight: 700;
 	line-height: 1;
+	display: flex;
+	border: solid 2px purple;
+  }
+
+  header nav#nav .nav-brand ul {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+
+  header nav#nav .nav-brand ul:last-of-type li::before {
+	border: solid 2px lime;
+
   }
   
   header nav#nav .nav-brand img {
-	width: 128px;
+	width: 18px;
 	height: auto;
   }
-  
+
+
+
   /* sections */
   header nav#nav .nav-sections {
 	grid-area: sections;
 	flex: 1 1 auto;
 	display: none;
 	visibility: hidden;
+  }
+
+  header nav#nav .nav-sections picture > img {
+	width: 128px;
+	height: auto;
   }
   
   header nav#nav[aria-expanded="true"] .nav-sections {
