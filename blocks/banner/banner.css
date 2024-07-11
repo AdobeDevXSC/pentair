@@ -1,3 +1,98 @@
-.icon-close:before {
-    content: "\e907";
+.banner {
+	background-color: var(--teal);
+	max-height: 86px;
+	height: 86px;
+	position: relative;
+}
+
+.banner.close {
+	max-height: 0;
+    transition: max-height 0.45s ease-out;
+}
+
+.banner.close > div > div,
+.banner.close > div:last-of-type {
+	display: none;
+}
+
+.banner > div > div {
+	padding: 16px 40px;
+}
+
+.banner > div:last-of-type {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	right: 0px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+@media(width <= 767px){
+	.banner > div:last-of-type {
+		padding: 0 15px;
+		width: calc(100% - 30px);
+	}
+}
+
+.banner > div > button {
+	border: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	background-color: transparent;
+}
+
+.banner button::after {
+	content: '';
+	min-width: 44px;
+	min-height: 44px;
+	background: url(../../icons/close.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(357deg) brightness(103%) contrast(102%);
+}
+
+.banner button:hover::after {
+	filter: invert(13%) sepia(100%) saturate(603%) hue-rotate(184deg) brightness(95%) contrast(108%);
+}
+
+.banner h4 {
+    font-weight: 700;
+	font-family: var(--body-font-family);
+	font-size: 20px;
+	line-height: 15px;
+	color: var(--white);
+	text-align: center;
+	margin: 0;
+}
+
+.banner p.button-container {
+	margin: 0;
+	text-align: center;
+}
+
+.banner p.button-container a {
+	text-align: center;
+	background-color: unset;
+	color: var(--neon);
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+.banner p.button-container a:hover {
+	text-decoration: underline;
+}
+
+.banner a.button:any-link::before, 
+.banner button::before {
+	display: none;
 }
