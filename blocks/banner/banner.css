@@ -3,20 +3,22 @@
 	max-height: 86px;
 	height: 86px;
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.banner.close {
-	max-height: 0;
-    transition: max-height 0.45s ease-out;
-}
-
-.banner.close > div > div,
-.banner.close > div:last-of-type {
-	display: none;
+.banner > div:first-of-type {
+	height: 100%;
+	padding: 16px 40px;
 }
 
 .banner > div > div {
-	padding: 16px 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 100%
 }
 
 .banner > div:last-of-type {
@@ -52,8 +54,8 @@
 
 .banner button::after {
 	content: '';
-	min-width: 44px;
-	min-height: 44px;
+	min-width: 36px;
+	min-height: 36px;
 	background: url(../../icons/close.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -86,6 +88,7 @@
 	padding: 0;
 	margin: 0;
 	display: block;
+	line-height: 1.2;
 }
 
 .banner p.button-container a:hover {
@@ -94,5 +97,15 @@
 
 .banner a.button:any-link::before, 
 .banner button::before {
+	display: none;
+}
+
+.banner.close {
+	max-height: 0;
+    transition: max-height 0.45s ease-out;
+}
+
+.banner.close > div > div,
+.banner.close > div:last-of-type {
 	display: none;
 }
