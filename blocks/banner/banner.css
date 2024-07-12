@@ -68,7 +68,7 @@
 
 .banner h4 {
     font-weight: 700;
-	font-family: var(--body-font-family);
+	font-family: var(--body-font);
 	font-size: 20px;
 	line-height: 15px;
 	color: var(--white);

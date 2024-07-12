@@ -12,6 +12,12 @@
   background-color: var(--background-color)
 }
 
+.is-json.cards > ul > a {
+	border: solid 2px lime;
+	display: none;
+	visibility: hidden;
+}
+
 .cards .cards-card-body {
   margin: 16px;
 }
@@ -28,4 +34,55 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+/* icon cards */
+.cards.icon-cards > ul {
+	grid-template-columns: repeat(5, 1fr);
+	padding: 32px 82px;
+	border-top: solid 1px var(--thin-divider-color);
+	border-bottom: solid 1px var(--thin-divider-color);
+}
+
+.cards .cards-hide-markdown {
+	display: none;
+	visibility: hidden;
+}
+
+.cards.icon-cards ul > a {
+	display: block;
+}	
+
+.cards.icon-cards a > li {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}	
+
+.cards.icon-cards a > li > .cards-card-icon {
+	min-width: 32px;
+	margin-right: 16px;
+}
+
+.cards.icon-cards a > li > .cards-card-icon .icon {
+	width: 32px;
+	height: 32px;
+	display: block;
+}
+
+.cards.icon-cards a > li > .cards-card-body {
+	margin: 0;
+	font-size: 22px;
+	color: var(--dark-blue);
+	font-family: var(--heading-font);
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 1.15em;
+}
+
+.cards.icon-cards .icon img {
+	min-width: 32px;
+	height: 32px;
+	display: block;
 }

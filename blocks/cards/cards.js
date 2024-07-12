@@ -2,7 +2,7 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
   const isJSON = block.classList.contains('is-json');
-  const link = block.querySelector('a'); 
+  const link = block.querySelector('a');
 
   async function fetchJson(link) {
     const response = await fetch(link?.href);
@@ -16,27 +16,30 @@ export default async function decorate(block) {
   }
 
   const ul = document.createElement('ul');
-
 	[...block.children].forEach((row) => {
 		const anchor = document.createElement('a');
 		anchor.href = '';
 		const li = document.createElement('li');
 		while (row.firstElementChild) li.append(row.firstElementChild);
 		[...li.children].forEach((div) => {
-
-		if (div.children.length === 1 && div.querySelector('picture')) {
+		  if (div.children.length === 1 && div.querySelector('a')) {
+			const linkURL = div.querySelector('a').innerHTML;
+			anchor.href = linkURL;
+			div.className = 'cards-hide-markdown';
+		  } else if (div.children.length === 1 && div.querySelector('picture')) {
 			div.className = 'cards-card-image';
-		} else if (div.children.length === 1 && div.querySelector('span')) {
+		  } else if (div.children.length === 1 && div.querySelector('span')) {
 			div.className = 'cards-card-icon';
-		} else {
+		  } else {
 			div.className = 'cards-card-body';
-		}
+		  }
 		});
+
 		anchor.append(li);
 		ul.append(anchor);
 	});
   
-  if (isJSON) {
+  if (isJSON && link) {
     const cardData = await fetchJson(link);
     cardData.forEach((item) => {
       const picture = createOptimizedPicture(item.image, item.title, false, [{ width: 320 }]);
@@ -47,7 +50,10 @@ export default async function decorate(block) {
 
       createdCard.innerHTML = `
         <div class="cards-card-body">
-			// place inner HTML structure based on JSON response as needed
+			<a href="${item.link}"
+				${picture.outerHTML}
+				<span>${item.title}</span>
+			</a>
         </div>
       `;
       ul.append(createdCard);
