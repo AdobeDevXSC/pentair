@@ -1,0 +1,15 @@
+main .section.fullwidth-cta-container {
+	padding: 40px 20px;
+}
+
+.fullwidth-cta.text-only.center-title h2 { 
+	text-align: center;
+	margin: 0;
+}
+
+.fullwidth-cta p {
+	color: var(--body-text-color);
+	line-height: 1.42857143;
+	font-weight: 300;
+	margin: 30px 0;
+}

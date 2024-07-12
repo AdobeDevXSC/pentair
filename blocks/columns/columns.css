@@ -19,7 +19,15 @@
   display: block;
 }
 
+main .section.light-grey {
+	background-color: var(--light-grey);
+}
+
 @media (width >= 900px) {
+  .columns {
+
+  }
+
   .columns > div {
     align-items: center;
     flex-direction: unset;

@@ -28,7 +28,7 @@
   --link-color: var(--accent-green);
 
   --body-text-color: #464747;
-  --body-header-color: var(--dark-blue);
+  --heading-color: var(--dark-blue);
 
   /* fonts */
   --body-font-family: barlow, sans-serif;;
@@ -36,7 +36,7 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
+  --body-font-size-m: 20px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
 
@@ -49,7 +49,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 124px;
 }
 
 @font-face {
@@ -73,9 +73,8 @@
 body {
   font-size: var(--body-font-size-m);
   margin: 0;
-  font-family: var(--body-font-family);
   line-height: 1.6;
-  color: var(--text-color);
+  font-family: var(--body-font-family);
   background-color: var(--background-color);
   display: none;
 }
@@ -91,19 +90,21 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 300;
+  line-height: 1em;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
+  color: var(--heading-color);
   scroll-margin: calc(var(--nav-height) + 1em);
+  text-transform: uppercase;
 }
 
 h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h2 { font-size: var(--heading-font-size-xxl) }
+h3 { font-size: var(--heading-font-size-xl) }
+h4 { font-size: var(--heading-font-size-l) }
+h5 { font-size: var(--heading-font-size-m) }
+h6 { font-size: var(--heading-font-size-s) }
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
@@ -232,6 +233,47 @@ main .section {
     margin: auto;
   }
 }
+
+/* section background colors */
+main .section.light-grey {
+	background-color: var(--light-grey);
+}
+
+main .section.dark-blue {
+	background-color: var(--dark-blue);
+}
+
+main .section.teal {
+	background-color: var(--teal);
+}
+
+main .section.green {
+	background-color: var(--accent-green);
+}
+
+main .section.dark {
+	background-color: var(--dark-teal);
+}
+
+main .section.dark-blue h2,
+main .section.dark h2,
+main .section.green h2,
+main .section.teal h2,
+main .section.dark-blue h3,
+main .section.dark h3,
+main .section.green h3,
+main .section.teal h3,
+main .section.dark-blue h4,
+main .section.dark h4,
+main .section.green h4,
+main .section.teal h4
+main .section.dark-blue p,
+main .section.dark p,
+main .section.green p,
+main .section.teal p {
+	color: var(--white);
+}
+
 
 /* section metadata */
 main .section.light,
