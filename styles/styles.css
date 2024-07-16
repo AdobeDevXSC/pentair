@@ -165,7 +165,7 @@ a.button:any-link, button {
   text-overflow: ellipsis;
   display: inline-block;
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 18px;
   white-space: pre;
   position: relative;
 }
@@ -228,7 +228,7 @@ main .section {
 
 @media (width >= 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 40px 20px;
   }
 }
 

@@ -9,7 +9,7 @@ main .section.fullwidth-cta-container {
 
 .fullwidth-cta p {
 	color: var(--body-text-color);
-	line-height: 1.42857143;
+	line-height: 1.428;
 	font-weight: 300;
 	margin: 30px 0;
 }

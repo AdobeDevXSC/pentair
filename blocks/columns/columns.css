@@ -19,15 +19,7 @@
   display: block;
 }
 
-main .section.light-grey {
-	background-color: var(--light-grey);
-}
-
-@media (width >= 900px) {
-  .columns {
-
-  }
-
+@media (width >= 767px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -38,4 +30,136 @@ main .section.light-grey {
     flex: 1;
     order: unset;
   }
+}
+
+/* divider columns */
+main .section.columns-container.divider {
+	padding: 20px;
+}
+
+main .section.columns-container.divider .columns > div {
+	gap: 0;
+}
+
+main .section.columns-container.divider .columns > div > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 26px 20px;
+}
+
+main .section.columns-container.divider .columns > div > div:first-of-type {
+	 border-right: solid 2px var(--thick-divider-color);
+}
+
+main .section.columns-container.divider .columns > div > div > h3 {
+	margin: 0 0 32px;
+	text-align: center;
+}
+
+main .section.columns-container.divider .columns > div > div > p,
+main .section.columns-container.divider .columns > div > div > p > a {
+	margin: 0;
+	display: block;
+	font-weight: 600;
+    font-size: 18px;
+}
+
+@media (width <= 767px) {
+	main .section.columns-container.divider .columns > div > div:first-of-type {
+		border-right: none;
+   }
+}
+
+
+/* cutaways columns */
+main .section.columns-container.cutaways {
+	padding: 0;
+}
+
+main .section.columns-container.cutaways .columns > div > div {
+	position: relative;
+}
+
+main .section.columns-container.cutaways .columns > div > div > h4 {
+	font-family: var(--body-font);
+	font-size: 24px;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    line-height: 1em;
+}
+
+main .section.columns-container.cutaways .columns > div > div > h3 {
+	font-weight: 300;
+    margin: 0 0 32px;
+    line-height: 1em;
+	font-size: 40px;
+}
+
+main .section.columns-container.cutaways .columns > div > div > p:not(.button-container) {
+	margin: 0;
+}
+
+main .section.columns-container.cutaways .columns > div > div > p.button-container {
+	margin: 0 15px 0 0;
+	display: inline-block;
+}
+
+main .section.columns-container.cutaways .columns > div > div > p:not(.button-container):first-of-type > picture > img {
+	display: block;
+	min-height: 425px;
+	width: 100%; 
+	object-fit: cover;
+}
+
+main .section.columns-container.cutaways .columns > div > div > p:not(.button-container):last-of-type {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+}
+
+main .section.columns-container.cutaways .columns > div > div > p:last-of-type > picture > img {
+	display: block;
+	object-fit: contain;
+	max-height: 300px;
+	min-width: 300px;
+}
+
+/* left images */
+main .section.columns-container.cutaways .columns > div:nth-of-type(even) > div:first-of-type::after {
+	display: block;
+	background: linear-gradient(-128deg, #fff 305px, transparent 0) top right;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -50px;
+	height: 425px;
+	width: 400px;
+}
+
+main .section.columns-container.cutaways .columns > div:nth-of-type(even) > div:first-of-type > p:not(.button-container):last-of-type {
+	right: 0;
+}
+
+/* right images */ 
+main .section.columns-container.cutaways .columns > div:nth-of-type(odd) > div:last-of-type::after {
+	display: block;
+	background: linear-gradient(-128deg, transparent 305px, #fff 0) top right;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0px;
+	height: 425px;
+	width: 400px;
+}
+
+main .section.columns-container.cutaways .columns > div:nth-of-type(odd) > div:last-of-type > p:not(.button-container):last-of-type {
+	left: 0;
+}
+
+@media (width >= 767px) {
+	main .section.columns-container.cutaways .columns > div {
+	  align-items: unset;	
+	}
 }

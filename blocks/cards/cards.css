@@ -37,6 +37,10 @@
 }
 
 /* icon cards */
+.cards-container .default-content-wrapper h3 {
+	margin-top: 0;
+}
+
 .cards.icon-cards > ul {
 	grid-template-columns: repeat(5, 1fr);
 	padding: 32px 82px;
