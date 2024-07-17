@@ -164,6 +164,41 @@ main .section.columns-container.cutaways .columns > div:nth-of-type(odd) > div:l
 	}
 }
 
+
+
+/* fifty-fifty columns*/
+main .section.columns-container.fifty-fifty {
+	border: solid 2px orange;
+}
+
+.columns > div > div {
+    flex: unset;
+    order: unset;
+}
+
+.columns > div > div:first-of-type {
+	width: 66.66666667%;
+}
+
+main .section.columns-container.fifty-fifty .columns h5 {
+	color: var(--accent-green);
+	font-family: var(--body-font);
+	font-weight: 700;
+	font-size: 20px;
+	margin: 0;
+}
+
+main .section.columns-container.fifty-fifty .columns h2 {
+	font-size: 50px;
+	margin: 32px 0;
+}
+
+main .section.columns-container.fifty-fifty .columns p {
+	font-weight: 300;
+}
+
+
+
 /* colorblock */
 main .section.columns-container.colorblock {
 	padding: 0;
@@ -178,6 +213,7 @@ main .section.columns-container.colorblock > div {
 	gap: 0;
 	align-items: unset;
 	margin-top: 20px;
+	width: 100%;
 }
 
 .columns.colorblock > div > div {
@@ -193,6 +229,13 @@ main .section.columns-container.colorblock > div {
 .columns.colorblock > div > div:first-of-type {
 	background-color: var(--teal);
 	color: var(--white);
+	padding-right: 0;
+}
+
+.columns.colorblock > div > div:first-of-type h3,
+.columns.colorblock > div > div:first-of-type p {
+	max-width: 570px;
+	margin-left: auto;
 }
 
 .columns.colorblock > div > div:last-of-type {
@@ -207,7 +250,8 @@ main .section.columns-container.colorblock > div {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	height: 230px;
+	height: 222px;
+	max-width: 600px;
 }
 
 .columns.colorblock > div > div:last-of-type ul li {

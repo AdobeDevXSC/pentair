@@ -1,4 +1,8 @@
 /* suppress nested section padding */
+main .section.fragment-container {
+	padding: 0;
+}
+
 .fragment-wrapper > .section {
   padding-left: 0;
   padding-right: 0;
@@ -10,4 +14,19 @@
 
 .fragment-wrapper > .section:last-of-type {
   padding-bottom: 0;
+}
+
+.fragment-wrapper > .section .default-content-wrapper {
+	color: var(--body-text-color);
+	font-weight: 300;
+}
+
+.fragment-wrapper > .section .default-content-wrapper sub {
+	position: relative;
+    font-size: 15px;
+    line-height: 0;
+    vertical-align: baseline;
+	margin: 20px 0 30px;
+	font-style: italic;
+    bottom: -.25em;
 }
