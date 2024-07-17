@@ -167,10 +167,6 @@ main .section.columns-container.cutaways .columns > div:nth-of-type(odd) > div:l
 
 
 /* fifty-fifty columns*/
-main .section.columns-container.fifty-fifty {
-	border: solid 2px orange;
-}
-
 main .section.columns-container.fifty-fifty .columns > div > div {
     flex: unset;
     order: unset;
