@@ -195,6 +195,36 @@ main .section.columns-container.fifty-fifty .columns p {
 
 
 
+/* center title */
+main .section.columns-container.center-title {
+	padding: 20px;
+}
+
+main .section.columns-container.center-title .default-content-wrapper h2 {
+	text-align: center;
+	margin: 32px 0;
+	font-size: 50px;
+}
+
+main .section.columns-container.center-title .default-content-wrapper p {
+	text-align: center;
+	font-weight: 600;
+	margin: 0;
+}
+
+main .section.columns-container.center-title .columns > div > div h4 {
+	margin: 0 0 32px;
+	font-family: var(--body-font);
+	font-size: 24px;
+	font-weight: 700;
+}
+
+main .section.columns-container.center-title .columns > div > div p:not(.button-container) {
+	font-weight: 300;
+	line-height: 1.42857143;
+}
+
+
 /* colorblock */
 main .section.columns-container.colorblock {
 	padding: 0;
