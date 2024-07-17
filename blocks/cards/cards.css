@@ -36,6 +36,13 @@
   object-fit: cover;
 }
 
+
+.cards-container.center-title .default-content-wrapper h2,
+.cards-container.center-title .default-content-wrapper h3 {
+	text-align: center;
+}
+
+
 /* icon cards */
 .cards-container .default-content-wrapper h3 {
 	margin-top: 0;

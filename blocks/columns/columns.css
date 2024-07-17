@@ -72,9 +72,37 @@ main .section.columns-container.divider .columns > div > div > p > a {
 }
 
 
-/* cutaways columns */
+
+/* icon columns */
+.columns.centered-content > div > div {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.columns.centered-content > div > div > h3 {
+	font-size: 40px;
+	margin-top: 0;
+	text-align: center;
+}
+
+.columns.centered-content > div > div > p:not(.button-container) {
+	margin: 0;
+	text-align: center;
+	color: var(--body-text-color);
+}
+
+.columns.has-icon > div > div img {
+	display: block;
+	width: 150px;
+	height: 150px;
+}
+
+
+/* cutaway columns */
 main .section.columns-container.cutaways {
 	padding: 0;
+	overflow: hidden;
 }
 
 main .section.columns-container.cutaways > div {
@@ -214,7 +242,8 @@ main .section.columns-container.center-title {
 	padding: 20px;
 }
 
-main .section.columns-container.center-title .default-content-wrapper h2 {
+main .section.columns-container.center-title .default-content-wrapper h2,
+main .section.columns-container.center-title .default-content-wrapper h3 {
 	text-align: center;
 	margin: 32px 0;
 	font-size: 50px;
@@ -239,6 +268,7 @@ main .section.columns-container.center-title .columns > div > div p:not(.button-
 }
 
 
+
 /* colorblock */
 main .section.columns-container.colorblock {
 	padding: 0;
@@ -257,7 +287,7 @@ main .section.columns-container.colorblock > div {
 }
 
 .columns.colorblock > div > div {
-	padding: 20px 48px;
+	padding: 20px;
 }
 
 .columns.colorblock > div > div > h3 {
@@ -269,7 +299,7 @@ main .section.columns-container.colorblock > div {
 .columns.colorblock > div > div:first-of-type {
 	background-color: var(--teal);
 	color: var(--white);
-	padding-right: 0;
+	padding-left: 0;
 }
 
 .columns.colorblock > div > div:first-of-type h3,
@@ -280,13 +310,18 @@ main .section.columns-container.colorblock > div {
 
 .columns.colorblock > div > div:last-of-type {
 	background-color: var(--dark-blue);
+	padding-right: 0;
+}
+
+.columns.colorblock > div > div:last-of-type h3 {
+	margin-left: 94px;
 }
 
 .columns.colorblock > div > div:last-of-type ul {
 	list-style: none;
 	padding: 0;
 	counter-reset: items;
-	margin: 30px 0 0;
+	margin: 30px 0 0 94px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
