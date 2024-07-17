@@ -163,3 +163,74 @@ main .section.columns-container.cutaways .columns > div:nth-of-type(odd) > div:l
 	  align-items: unset;	
 	}
 }
+
+/* colorblock */
+main .section.columns-container.colorblock {
+	padding: 0;
+}
+
+main .section.columns-container.colorblock > div {
+	max-width: unset;
+	margin: 0;
+}
+
+.columns.colorblock > div {
+	gap: 0;
+	align-items: unset;
+	margin-top: 20px;
+}
+
+.columns.colorblock > div > div {
+	padding: 20px 48px;
+}
+
+.columns.colorblock > div > div > h3 {
+	color: var(--white);
+	font-size: 40px;
+	margin: 0;
+}
+
+.columns.colorblock > div > div:first-of-type {
+	background-color: var(--teal);
+	color: var(--white);
+}
+
+.columns.colorblock > div > div:last-of-type {
+	background-color: var(--dark-blue);
+}
+
+.columns.colorblock > div > div:last-of-type ul {
+	list-style: none;
+	padding: 0;
+	counter-reset: items;
+	margin: 30px 0 0;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 230px;
+}
+
+.columns.colorblock > div > div:last-of-type ul li {
+	position: relative;
+	counter-increment: items;
+	padding: 0 0 15px 40px;
+	width: 155px;
+}
+
+.columns.colorblock > div > div:last-of-type ul li::before {
+	color: var(--accent-green);
+    content: "0" counter(items);
+	font-family: var(--heading-font);
+	font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 0;
+	display: inline-block;
+}
+
+.columns.colorblock > div > div:last-of-type a {
+	color: var(--neon);
+	font-weight: 600;
+	font-size: 20px;
+	text-transform: capitalize;
+}
