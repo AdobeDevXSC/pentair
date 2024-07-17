@@ -171,12 +171,12 @@ main .section.columns-container.fifty-fifty {
 	border: solid 2px orange;
 }
 
-.columns > div > div {
+main .section.columns-container.fifty-fifty .columns > div > div {
     flex: unset;
     order: unset;
 }
 
-.columns > div > div:first-of-type {
+main .section.columns-container.fifty-fifty .columns > div > div:first-of-type {
 	width: 66.66666667%;
 }
 

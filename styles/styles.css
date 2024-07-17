@@ -24,7 +24,6 @@
   --nav-divider-color: #dadada;
   --thin-divider-color: #e9e9e9;
   --thick-divider-color: var(--teal);
-  --width-shadow: box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
   --link-color: var(--accent-green);
 
@@ -136,6 +135,12 @@ main pre {
   border-radius: .25em;
   overflow-x: auto;
   white-space: pre;
+}
+
+body {
+	max-width: 1440px;
+	margin: 0 auto;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* links */
