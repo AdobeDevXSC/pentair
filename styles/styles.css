@@ -176,15 +176,21 @@ a.button:any-link, button {
   position: relative;
 }
 
+a.button:any-link > span, button > span {
+	z-index: 10;
+	position: relative;
+}
+
 a.button:any-link::before, button::before {
 	background: #000;
 	content: ' ';
 	height: 60px;
 	width: 130px;
 	opacity: 0.22;
+	
 	position: absolute;
 	right: -135px;
-	top: 20px;
+	top: 30px;
 	-webkit-transform: rotate(45deg) scale(1, 1);
 	-moz-transform: rotate(45deg) scale(1, 1);
 	-ms-transform: rotate(45deg) scale(1, 1);
@@ -198,16 +204,52 @@ a.button:hover, a.button:focus, button:hover, button:focus  {
   cursor: pointer;
 }
 
+a.button:hover::before, a.button:focus::before, button:hover::before, button:focus::before {
+	transform: rotate(90deg) scale(2, 6);
+    top: 0;
+}
+
 button:disabled, button:disabled:hover {
   background-color: var(--light-color);
   cursor: unset;
 }
 
 a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color)
+  background-color: transparent;
+  border: 3px solid var(--white);
+  color: var(--text-color);
+  position: relative;
 }
+
+a.button.secondary::before, button.secondary::before {
+	background: #fff;
+	content: ' ';
+	height: 60px;
+	width: 130px;
+	opacity: 1;
+	position: absolute;
+	right: -135px;
+	top: 35px;
+	-webkit-transform: rotate(45deg) scale(1, 1);
+	-moz-transform: rotate(45deg) scale(1, 1);
+	-ms-transform: rotate(45deg) scale(1, 1);
+	-o-transform: rotate(45deg) scale(1, 1);
+	transform: rotate(45deg) scale(1, 1);
+	transform-origin: top left;
+	transition: all 200ms ease-out;
+}
+
+a.button.secondary:hover, button.secondary:hover {
+	color: #222;
+}
+
+a.button.secondary:hover::before, button.secondary:hover::before {
+	transform: rotate(90deg) scale(2, 6);
+    top: 0;
+}
+
+
+
 
 main img {
   max-width: 100%;

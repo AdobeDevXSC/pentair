@@ -339,7 +339,10 @@ function sampleRUM(checkpoint, data = {}) {
    */
   function decorateButtons(element) {
 	element.querySelectorAll('a').forEach((a) => {
-	  a.title = a.title || a.textContent;
+	  const span = document.createElement('span');
+	  span.textContent = a.title || a.textContent;
+	  a.textContent = '';
+	  a.append(span);
 	  if (a.href !== a.textContent) {
 		const up = a.parentElement;
 		const twoup = a.parentElement.parentElement;

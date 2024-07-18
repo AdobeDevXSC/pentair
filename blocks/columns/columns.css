@@ -267,6 +267,10 @@ main .section.columns-container.center-title .columns > div > div p:not(.button-
 	line-height: 1.42857143;
 }
 
+main .section.green.columns-container.center-title {
+	padding-bottom: 40px;
+} 
+
 
 
 /* colorblock */
