@@ -271,6 +271,20 @@ main .section.green.columns-container.center-title {
 	padding-bottom: 40px;
 } 
 
+main .section.green.columns-container.center-title .columns > div > div:first-of-type {
+	display: flex;
+	justify-content: center;
+}
+
+main .section.green.columns-container.center-title .columns h3 {
+	font-size: 40px;
+} 
+
+main .section.green.columns-container.center-title img {
+	width: 400px;
+	display: block;
+}
+
 
 
 /* colorblock */
