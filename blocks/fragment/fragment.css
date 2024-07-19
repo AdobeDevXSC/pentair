@@ -19,14 +19,21 @@ main .section.fragment-container {
 .fragment-wrapper > .section .default-content-wrapper {
 	color: var(--body-text-color);
 	font-weight: 300;
+	line-height: 1em;
 }
 
 .fragment-wrapper > .section .default-content-wrapper sub {
 	position: relative;
     font-size: 15px;
-    line-height: 0;
     vertical-align: baseline;
 	margin: 20px 0 30px;
 	font-style: italic;
     bottom: -.25em;
+}
+
+@media(width <= 1200px){
+	.fragment-wrapper > .section .default-content-wrapper {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 }
