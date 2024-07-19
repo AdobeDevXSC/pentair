@@ -248,7 +248,11 @@ a.button.secondary:hover::before, button.secondary:hover::before {
     top: 0;
 }
 
-
+.nav-hamburger button::before,
+footer .button::before {
+	border: solid 2px lime;
+	display: none;
+}
 
 
 main img {
