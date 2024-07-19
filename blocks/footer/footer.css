@@ -6,7 +6,8 @@ footer {
 
 footer .footer .section:first-of-type > div {
 	display: grid;
-	grid-template-columns: repeat(10, 1fr);
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: 16px;
 }
 
 footer .footer p {
@@ -140,9 +141,13 @@ footer .footer ul:not(:first-of-type) {
 	grid-row: 1 /span 4;
 }
 
+footer .footer ul:not(:first-of-type) li:first-of-type {
+	display: none;
+	position: relative;
+}
+
 footer .footer ul:nth-of-type(2) {
 	grid-column: span 1;
-
 }
 
 footer .footer ul:nth-of-type(3) {
@@ -150,20 +155,21 @@ footer .footer ul:nth-of-type(3) {
 }
 
 footer .footer ul:nth-of-type(4) {
-	grid-column: span 3;
+	grid-column: span 2;
 }
 
 footer .footer ul:nth-of-type(5) {
-
+	grid-column: 10/ span 3;
 }
 
+/* column topper */
 footer .footer ul:not(:first-of-type)::before {
 	content: " ";
 	display: block;
 	width: 24px;
 	height: 2px;
 	margin-bottom: 20px;
-	background-color: #d0df00;
+	background-color: var(--neon);
 }
 
 footer .footer ul li a {
@@ -184,4 +190,75 @@ footer .footer .section:nth-of-type(2) {
 	color: var(--white);
 	margin-top: 30px;
 	font-weight: 300;
+}
+
+@media (width <= 992px) {	
+	footer .footer .section:first-of-type > div {
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 0;
+		padding: 0 20px;
+	}
+
+	/* links - mobile */
+	footer .footer ul:not(:first-of-type) {
+		grid-row: span 1;
+		border-top: 1px var(--white) solid;
+	}
+	
+	footer .footer ul:nth-of-type(2) {
+		grid-column: 1/ span 4;
+		margin-top: 40px;
+	}
+	
+	footer .footer ul:nth-of-type(3) {
+		grid-column: 1/ span 4;
+	}
+	
+	footer .footer ul:nth-of-type(4) {
+		grid-column: 1/ span 4;
+	}
+	
+	footer .footer ul:nth-of-type(5) {
+		grid-column: 1/ span 4;
+	}
+
+	footer .footer ul:not(:first-of-type) li:first-of-type {
+		display: block;
+		color: var(--white);
+		padding: 15px 0;
+		font-size: 14px;
+		line-height: 1.25;
+	}
+
+	footer .footer ul:not(:first-of-type)::before {
+		display: none;
+	}
+
+	footer .footer ul:not(:first-of-type) li:first-of-type::before {
+		content: " ";
+		position: absolute;
+		display: block;
+		background-color: var(--neon);
+		width: 12px;
+		height: 2px;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	footer .footer ul:not(:first-of-type) li:first-of-type::after {
+		content: " ";
+		position: absolute;
+		display: block;
+		background-color: var(--neon);
+		height: 12px;
+		width: 2px;
+		right: 5px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	footer .footer .section:nth-of-type(2) {
+		padding: 15px 20px;
+	}
+
 }
