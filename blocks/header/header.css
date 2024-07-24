@@ -1,6 +1,6 @@
 /* header and nav layout */
 header .nav-wrapper {
-	width: 100%;
+	/* width: 100%; */
 	z-index: 20;
 	position: fixed;
 	background-color: var(--white);
@@ -147,7 +147,7 @@ header .nav-wrapper {
 	background-color: var(--light-grey);
 	line-height: 1;
 	padding: 6px 0;
-	width: 100%;
+	width: 1440px;
   }
 
   header .nav-brand > div {
@@ -289,6 +289,7 @@ header .nav-wrapper {
 	header nav#nav .nav-brand {
 		background-color: transparent;
 		padding: 0;
+		width: 100%;
 	}
 
 	header nav#nav .nav-brand ul {
@@ -385,7 +386,6 @@ header .nav-wrapper {
 	  display: block;
 	  visibility: visible;
 	  white-space: nowrap;
-	  width: 100%;
 	}
 
 	header nav#nav .nav-sections > div {
