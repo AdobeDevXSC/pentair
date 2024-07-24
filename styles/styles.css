@@ -50,6 +50,7 @@
 
   /* nav height */
   --nav-height: 124px;
+  --mobile-nav-height: 90px;
 }
 
 @font-face {
@@ -85,6 +86,12 @@ body.appear {
 
 header {
   height: var(--nav-height);
+}
+
+@media (width <= 1260px){
+	header {
+		height: var(--mobile-nav-height);
+	  }
 }
 
 h1, h2, h3,
@@ -187,7 +194,6 @@ a.button:any-link::before, button::before {
 	height: 60px;
 	width: 130px;
 	opacity: 0.22;
-	
 	position: absolute;
 	right: -135px;
 	top: 30px;
@@ -222,7 +228,7 @@ a.button.secondary, button.secondary {
 }
 
 a.button.secondary::before, button.secondary::before {
-	background: #fff;
+	background: var(--white);
 	content: ' ';
 	height: 60px;
 	width: 130px;
@@ -250,7 +256,6 @@ a.button.secondary:hover::before, button.secondary:hover::before {
 
 .nav-hamburger button::before,
 footer .button::before {
-	border: solid 2px lime;
 	display: none;
 }
 
