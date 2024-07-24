@@ -1,6 +1,5 @@
 /* header and nav layout */
 header .nav-wrapper {
-	/* width: 100%; */
 	z-index: 20;
 	position: fixed;
 	background-color: var(--white);
@@ -24,7 +23,7 @@ header .nav-wrapper {
 	grid-template:
 	  "hamburger brand" var(--mobile-nav-height)
 	  "sections sections" 1fr
-	  "tools tools" var(--nav-height) / auto 1fr;
+	  "tools tools" var(--mobile-nav-height) / auto 1fr;
 	overflow-y: auto;
 	min-height: 100vh;
   }
@@ -32,6 +31,12 @@ header .nav-wrapper {
   @media (width >= 600px) {
 	header nav#nav {
 	  padding: 0 2rem;
+	}
+  }
+
+  @media (width <= 1260px) {
+	header .nav-wrapper {
+		width: 100%;
 	}
   }
   
@@ -386,6 +391,7 @@ header .nav-wrapper {
 	  display: block;
 	  visibility: visible;
 	  white-space: nowrap;
+	  width: 100%
 	}
 
 	header nav#nav .nav-sections > div {
